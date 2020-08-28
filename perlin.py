@@ -1,7 +1,7 @@
 from itertools import product
 import math
 import random
-
+''' SOURCE: https://gist.github.com/jtoy/7900e40a221b5e7739a284044df5ad7a '''
 def smoothstep(t):
     """Smooth curve with a zero derivative at 0 and 1, making it useful for
     interpolating.
