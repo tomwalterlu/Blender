@@ -60,15 +60,14 @@ class Utils:
               yCoord = -size + y * (size/ (amountCells / 2))
               zCoord = 0
               v[y][x] = (xCoord, yCoord, zCoord)
-      #Generiert Faces in Gittermuster
-      for x in range(amountCells):
-          for y in range(amountCells):
-              down_left = x + y * (amountCells + 1)
-              down_right = down_left + 1
-              up_left = down_left + amountCells + 1
-              up_right = up_left + 1
-              newX = x * 4
-              f[amountCells * y + x] = (down_left, down_right, up_right, up_left)
+              if(x < amountCells and y < amountCells):
+                #Generiert Faces in Gittermuster
+                down_left = x + y * (amountCells + 1)
+                down_right = down_left + 1
+                up_left = down_left + amountCells + 1
+                up_right = up_left + 1
+                newX = x * 4
+                f[amountCells * y + x] = (down_left, down_right, up_right, up_left)
       return v,f
   def isBorderVertex(Utils,vertex):
     '''
